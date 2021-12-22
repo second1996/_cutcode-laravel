@@ -1,0 +1,1 @@
+@@include('../../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js') // Bootstrap Collapse (Accordion)
