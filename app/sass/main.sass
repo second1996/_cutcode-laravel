@@ -1,1 +1,53 @@
+@mixin font($font_name, $font_style, $font_weight, $font_file)
+	@font-face
+		font-family: $font_name
+		font-style: $font_style
+		font-weight: $font_weight
+		font-display: swap
+		src: url('../fonts/#{$font_file}.woff2') format('woff2')
 
+@include font('Gilroy', normal, 400, 'Gilroy-Regular')
+@include font('Gilroy', normal, 500, 'Gilroy-Medium')
+@include font('Gilroy', normal, 600, 'Gilroy-Semibold')
+@include font('Gilroy', normal, 700, 'Gilroy-Bold')
+@include font('Gilroy', normal, 900, 'Gilroy-Black')
+
+// Vars
+$white:    #FFF
+$purple:   #7843E9
+$pink:     #EC4176
+$dark:     #222
+$gray:     #454545
+$darkblue: #1E1F43
+$trs:      .3s ease
+
+// Imports
+@import components
+
+// Basic rules
+body
+	background-color: #F8F8F8
+a
+	transition: $trs
+
+
+// Header
+.header
+	&-actions
+		.profile
+			&-text::after
+				content: ''
+				position: absolute
+				left: 0
+				right: 0
+				bottom: 0
+				height: 2px
+				background-color: $purple
+				opacity: 0
+				transition: $trs
+			&:hover
+				.profile-text::after
+					opacity: 1
+
+.s-heroes
+	background: linear-gradient(254.82deg, #232453 32.2%, rgba(29, 10, 23, 0.95) 100%)

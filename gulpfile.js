@@ -45,8 +45,8 @@ const browsersync = require('browser-sync').create();
 const babel = require('gulp-babel');
 const fileinclude = require('gulp-file-include');
 const del = require('del');
-const sass = require('gulp-sass');
-const scss = require('gulp-sass');
+const sass = require('gulp-sass')(require('sass'));
+const scss = require('gulp-sass')(require('sass'));
 const cleancss = require('gulp-clean-css');
 const concat = require('gulp-concat');
 const uglify = require('gulp-uglify-es').default;
@@ -171,7 +171,7 @@ function svgSprite() {
  * Fonts convertation function (.ttf -> .woff, .woff2)
  */
 gulp.task('fonts', function () {
-  src(path.src.fonts).pipe(ttf2woff()).pipe(dest(path.build.fonts));
+  // src(path.src.fonts).pipe(ttf2woff()).pipe(dest(path.build.fonts));
   return src(path.src.fonts).pipe(ttf2woff2()).pipe(dest(path.build.fonts));
 });
 

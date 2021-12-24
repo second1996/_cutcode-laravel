@@ -14,7 +14,18 @@ module.exports = {
       center: true,
       padding: '10px',
     },
-    fontSize: {},
+    fontFamily: {
+      'sans': ['Gilroy', 'sans-serif'],
+    },
+    fontSize: {
+      'xs': ['16px', '1.3em'],
+      'sm': ['18px', '1.6em'],
+      'md': ['20px', '1.75em'],
+      'lg': ['24px', '1.75em'],
+      'xl': ['36px', '1.6em'],
+      '2xl': ['64px', '1.3em'],
+      '3xl': ['96px', '1.1em'],
+    },
     extend: {
       colors: {
         white: "#FFF",
