@@ -32,22 +32,21 @@ a
 	transition: $trs
 
 // Header
-.header
-	&-actions
-		.profile
-			&-text::after
-				content: ''
-				position: absolute
-				left: 0
-				right: 0
-				bottom: 0
-				height: 2px
-				background-color: $purple
-				opacity: 0
-				transition: $trs
-			&:hover
-				.profile-text::after
-					opacity: 1
+.header-actions .profile,
+.mmenu-inner .profile
+	.profile-text::after
+		content: ''
+		position: absolute
+		left: 0
+		right: 0
+		bottom: 0
+		height: 2px
+		background-color: $purple
+		opacity: 0
+		transition: $trs
+	&:hover
+		.profile-text::after
+			opacity: 1
 
 .s-heroes
 	background: linear-gradient(254.82deg, #232453 32.2%, rgba(29, 10, 23, 0.95) 100%)
