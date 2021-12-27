@@ -8,11 +8,11 @@ module.exports = {
       'md': '720px',
       'lg': '960px',
       'xl': '1140px',
-      '2xl': '1540px',
+      '2xl': '1550px',
     },
     container: {
       center: true,
-      padding: '10px',
+      padding: '15px',
     },
     fontFamily: {
       'sans': ['Gilroy', 'sans-serif'],
@@ -21,9 +21,9 @@ module.exports = {
       'xs': ['16px', '1.3em'],
       'sm': ['18px', '1.6em'],
       'md': ['20px', '1.75em'],
-      'lg': ['24px', '1.75em'],
+      'lg': ['24px', '1.3em'],
       'xl': ['36px', '1.6em'],
-      '2xl': ['64px', '1.3em'],
+      '2xl': ['64px', '1.1em'],
       '3xl': ['96px', '1.1em'],
     },
     extend: {
