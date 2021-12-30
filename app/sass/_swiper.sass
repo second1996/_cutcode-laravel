@@ -1,0 +1,86 @@
+// Import Swiper
+@import 'node_modules/swiper/swiper.scss'
+@import 'node_modules/swiper/modules/pagination/pagination.scss'
+
+// Base customize for Swiper
+.swiper
+	position: relative
+	.swiper-slide
+		height: auto
+
+// Navigation customize
+.swiper-button-prev,
+.swiper-button-next
+	display: inline-flex
+	align-items: center
+	justify-content: center
+	width: 64px
+	height: 64px
+	padding: 0
+	box-shadow: 0 5px 0 rgba(0,0,0, 0.05)
+	background-color: $white
+	color: $gray
+	outline: none
+	&.swiper-button-disabled
+		pointer-events: none
+		user-select: none
+		color: #BDBDBD
+	> svg
+		width: 24px
+		height: 24px
+		stroke-width: 0
+		stroke: currentColor
+		fill: currentColor
+.swiper-button-prev
+	border-radius: 4px 20px 4px 20px
+	> svg
+		transform: scaleX(-1)
+.swiper-button-next
+	margin-left: 16px
+	border-radius: 20px 4px 20px 4px
+
+.swiper-arrows-purple
+	.swiper-button-prev,
+	.swiper-button-next
+		&:hover
+			background-color: $purple
+			box-shadow: 0 5px 0 #5E3BA7
+			color: $white
+
+.swiper-arrows-pink
+	.swiper-button-prev,
+	.swiper-button-next
+		&:hover
+			background-color: $pink
+			box-shadow: 0 5px 0 #9E294D
+			color: $white
+
+
+
+// Pagination customize
+.swiper-pagination
+	position: relative
+	display: flex
+	flex-wrap: wrap
+	align-items: center
+	justify-content: center
+	width: 100%
+	&-horizontal.swiper-pagination-bullets
+		.swiper-pagination-bullet
+			margin: 5px
+	&-bullet
+		box-sizing: content-box
+		width: 12px
+		height: 12px
+		border-radius: 50%
+		border: 0
+		background-color: #C4C4C4
+		outline: none
+		opacity: 1
+		transition: $trs
+		&-active
+			pointer-events: none
+			background-color: $purple
+		&:hover:not(.swiper-pagination-bullet-active)
+			cursor: pointer
+			background-color: $pink
