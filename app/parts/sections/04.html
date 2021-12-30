@@ -28,5 +28,40 @@
 				<div class="text-gray text-xs sm:text-sm md:text-md 2xl:text-lg font-semibold text-center">Правильно проектировать приложение</div>
 			</div><!-- /.s-education-adv-item -->
 		</div><!-- /.s-education-adv -->
+
+		<!-- Tabs -->
+		<div x-data="tabs()">
+			<div class="flex justify-center items-center mt-12 lg:mt-16">
+				<ul class="inline-flex flex-col sm:flex-row overflow-hidden pb-1 rounded-md">
+					<template x-for="(tab, index) in tabs" :key="index">
+						<li class="cursor-pointer min-w-[240px] lg:min-w-[300px] py-4 lg:py-6 px-6 lg:px-8 shadow-[0_4px_0_0_rgba(0,0,0,0.05)] bg-white text-dark text-xs xl:text-sm font-bold text-center transition"
+							:class="activeTab===index ? 'bg-purple !text-white' : ''" @click="activeTab = index"
+							x-text="tab"></li>
+					</template>
+				</ul>
+			</div>
+			<div class="max-w-[1260px] my-6 xl:my-12 mx-auto">
+				<div x-show="activeTab===0" class="text-gray text-xs sm:text-sm xl:text-md text-center">
+					<p class="mb-4">Основная мысль в том что это 5 принципов и в целом принципы которые тут изложенны это фундамент для разработчика, они не являются законами но помогают делать качественные проекты за которые не стыдно, которые проходят проверку времени! Знание принципов и шаблонов проектирование это мост между новичком и профессионалом! Такой код проще поддерживать работая в команде! Его легче в будущем расширять и модернизировать.</p>
+					<p>На любом себеседовании в серьёзную фирму на зарплату более 150 т.р. у Вас обязательно попросят рассказать принципы SOLID. А общаясь в комьюнити Laravel не зная принципов хорошей архитектуры приложений, Вам будет очень сложно завоевать авторитет!</p>
+				</div>
+				<div x-show="activeTab===1" class="text-gray text-xs sm:text-sm xl:text-md text-center">
+					<p class="mb-4">Можно проходить обучение принципам SOLID для любого языка программирования, но в данном курсе мы будем разбирать все принципы применительно к Laravel.</p>
+					<p>Для более продуктивного изучения материала предусмотрена возможность задать возникающие вопросы автору по ходу изучения курса.</p>
+				</div>
+			</div>
+		</div>
+
+		<script>
+			function tabs() {
+				return {
+					activeTab: 0,
+					tabs: [
+						"Что даст вам этот курс?",
+						"Особенности курса",
+					]
+				};
+			};
+		</script>
 	</div><!-- /.container -->
 </section>
