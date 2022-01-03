@@ -71,3 +71,28 @@
 		color: rgba($darkblue, 0.5)
 	&:focus
 		outline: none
+
+
+// Accrodion
+.accordion
+	&-header
+		box-shadow: inset 0 -4px 0 rgba(0,0,0, 0.075)
+		background-color: $white
+		&-title
+			color: $darkblue
+		&-icon
+			flex-shrink: 0
+			width: 18px
+			height: 18px
+			fill: rgba($darkblue, 0.15)
+			transform: scaleY(-1)
+		&._is-toggled
+			box-shadow: none
+			background-color: $darkblue
+			.accordion-header-title
+				color: $white
+			.accordion-header-icon
+				fill: $white
+				transform: none
+	&-content
+		transition: max-height 0.3s ease-out, padding 0.3s ease
