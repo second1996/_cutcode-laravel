@@ -80,12 +80,17 @@
 		background-color: $white
 		&-title
 			color: $darkblue
+			line-height: 1.15
 		&-icon
 			flex-shrink: 0
 			width: 18px
 			height: 18px
+			margin-left: 12px
 			fill: rgba($darkblue, 0.15)
 			transform: scaleY(-1)
+			+media-breakpoint-down(xs)
+				width: 14px
+				height: 14px
 		&._is-toggled
 			box-shadow: none
 			background-color: $darkblue
@@ -94,5 +99,8 @@
 			.accordion-header-icon
 				fill: $white
 				transform: none
+		&-pink
+			&._is-toggled
+				background-color: $pink
 	&-content
 		transition: max-height 0.3s ease-out, padding 0.3s ease
