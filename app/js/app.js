@@ -73,6 +73,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	 * Curriculum accordion
 	 */
 	const accordionHeader = document.querySelectorAll('.accordion-header');
+
 	accordionHeader.forEach((header) => {
 		header.addEventListener('click', function () {
 			const accordionContent = header.parentElement.querySelector('.accordion-content');
@@ -89,4 +90,62 @@ document.addEventListener('DOMContentLoaded', function() {
 		});
 	});
 
-})
+	/**
+	 * Price timer
+	 */
+	const deadline = document.querySelector('.s-price-timer').dataset.deadline;
+
+	function getTimeRemaining(endtime) {
+		const t = Date.parse(endtime) - Date.parse(new Date),
+					days = Math.floor(t / (1000 * 60 * 60 * 24)),
+					hours = Math.floor((t / (1000 * 60 * 60) % 24)),
+					minutes = Math.floor((t / 1000 / 60 ) % 60),
+					seconds = Math.floor((t / 1000) % 60);
+
+		return {
+			'total': t,
+			'days': days,
+			'hours': hours,
+			'minutes': minutes,
+			'seconds': seconds
+		};
+	}
+
+	function getZero(num) {
+		if (num < 0) {
+			return '00';
+		}
+		if (num >= 0 && num < 10) {
+			return `0${num}`
+		} else {
+			return `${num}`;
+		}
+	}
+
+	function setClock(selector, endtime) {
+		const timer = document.querySelector(selector);
+		const days = timer.querySelector('#s-price-timer-days');
+		const hours = timer.querySelector('#s-price-timer-hours');
+		const minutes = timer.querySelector('#s-price-timer-minutes');
+		const seconds = timer.querySelector('#s-price-timer-seconds');
+		const timeInterval = setInterval(updateClock, 1000);
+
+		updateClock();
+
+		function updateClock() {
+			const t = getTimeRemaining(endtime);
+
+			days.innerHTML = getZero(t.days);
+			hours.innerHTML = getZero(t.hours);
+			minutes.innerHTML = getZero(t.minutes);
+			seconds.innerHTML = getZero(t.seconds);
+
+			if (t.total <= 0) {
+				clearInterval(timeInterval);
+			}
+		}
+	}
+
+	setClock('.s-price-timer', deadline);
+
+});

@@ -12,7 +12,7 @@ module.exports = {
     },
     container: {
       center: true,
-      padding: '15px',
+      padding: '20px',
     },
     fontFamily: {
       'sans': ['Gilroy', 'sans-serif'],
@@ -22,7 +22,7 @@ module.exports = {
       'sm': ['18px', '1.6em'],
       'md': ['20px', '1.45em'],
       'lg': ['24px', '1.3em'],
-      'xl': ['36px', '1.45em'],
+      'xl': ['36px', '1.3em'],
       '2xl': ['64px', '1.1em'],
       '3xl': ['96px', '1.1em'],
     },
