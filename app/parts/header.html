@@ -11,39 +11,21 @@
 	<link rel="stylesheet" href="./css/tailwind.css">
 	<link rel="stylesheet" href="./css/main.css">
 </head>
-<body>
+<body x-data="{ 'showModal': false }" @keydown.escape="showModal = false" x-cloak>
 
-<header class="header absolute top-6 xl:top-12 left-0 right-0">
-	<div class="container">
-		<div class="header-inner flex items-center">
-			<div class="header-logo shrink-0">
-				<a href="/" rel="home">
-					<img src="./images/logo.svg" class="w-[148px] md:w-[201px] h-[36px] md:h-[50px]" alt="CutCode">
-				</a>
-			</div><!-- /.header-logo -->
-			<div class="header-menu grow flex justify-center ml-8 mr-8">
-				<nav class="hidden 2xl:inline-block">
-					<a href="#" class="ml-4 mr-4 text-white hover:text-pink font-bold">О курсе</a>
-					<a href="#" class="ml-4 mr-4 text-white hover:text-pink font-bold">Для кого</a>
-					<a href="#" class="ml-4 mr-4 text-white hover:text-pink font-bold">Что получишь</a>
-					<a href="#" class="ml-4 mr-4 text-white hover:text-pink font-bold">Отзывы</a>
-					<a href="#" class="ml-4 mr-4 text-white hover:text-pink font-bold">Программа курса</a>
-					<a href="#" class="ml-4 mr-4 text-white hover:text-pink font-bold">Стоимость</a>
-				</nav>
-			</div><!-- /.header-menu -->
-			<div class="header-actions flex items-center">
-				<button class="profile hidden xs:flex items-center">
-					<svg class="profile-icon w-8 h-8 text-purple" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32"><defs/><path d="M26.749 24.93A13.99 13.99 0 1 0 2 16a13.899 13.899 0 0 0 3.251 8.93l-.02.017c.07.084.15.156.222.239c.09.103.187.2.28.3c.28.304.568.596.87.87c.092.084.187.162.28.242c.32.276.649.538.99.782c.044.03.084.069.128.1v-.012a13.901 13.901 0 0 0 16 0v.012c.044-.031.083-.07.128-.1c.34-.245.67-.506.99-.782c.093-.08.188-.159.28-.242c.302-.275.59-.566.87-.87c.093-.1.189-.197.28-.3c.071-.083.152-.155.222-.24zM16 8a4.5 4.5 0 1 1-4.5 4.5A4.5 4.5 0 0 1 16 8zM8.007 24.93A4.996 4.996 0 0 1 13 20h6a4.996 4.996 0 0 1 4.993 4.93a11.94 11.94 0 0 1-15.986 0z" fill="currentColor"/></svg>
-					<span class="profile-text relative ml-2 text-white text-[14px] md:text-xs font-bold">Войти</span>
-				</button>
-				<button class="!hidden md:!flex order btn btn-pink ml-6 2xl:ml-12">Купить курс</button>
-				<button id="burgerMenu" class="flex 2xl:hidden ml-4 text-white hover:text-pink transition">
-					<span class="sr-only">Открыть меню</span>
-					<svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-					</svg>
-				</button>
-			</div><!-- /.header-actions -->
-		</div><!-- /.header-inner -->
-	</div><!-- /.container -->
-</header>
+<!-- Promo banner -->
+<div class="promo-banner hidden fixed top-0 left-0 right-0 z-[999] py-3 bg-[#FFD569]">
+	<div class="relative">
+		<div class="container">
+			<p class="px-4 text-black text-[14px] md:text-xs text-center">🎁 <b>Новогодняя распродажа</b> | Курс по цене 2999 руб. Осталось 3 дня!</p>
+		</div>
+		<div class="absolute top-0 right-2 sm:right-4 lg:right-8 bottom-0 w-6 h-6 my-auto">
+			<button id="closePromoBanner" class="text-dark hover:text-purple transition">
+				<span class="sr-only">Закрыть меню</span>
+				<svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+				</svg>
+			</button>
+		</div>
+	</div>
+</div>

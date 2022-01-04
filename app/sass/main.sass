@@ -53,3 +53,21 @@ a
 
 .s-heroes
 	background: linear-gradient(255deg, #232453 32%, rgba(29, 10, 23, 0.95) 100%)
+	&-photo
+		position: absolute
+		top: 0
+		right: -15%
+		bottom: 0
+		mask: url('../images/heroes-mask.svg') no-repeat
+		mask-size: cover
+		+media-breakpoint-down(xs)
+			left: -15%
+		&::after
+			content: ''
+			position: absolute
+			top: 0
+			left: 0
+			right: 0
+			bottom: 0
+			background-color: rgba($darkblue, 0.8)
+			backdrop-filter: blur(2px)

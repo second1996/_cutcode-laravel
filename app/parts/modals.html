@@ -1,0 +1,40 @@
+<!-- Modal: Купить курс -->
+<div class="overflow-auto" style="background-color: rgba(0,0,0,0.5)" x-show="showModal" :class="{ 'fixed inset-0 z-[9999] flex items-center justify-center': showModal }">
+	<div class="modal-wrapper max-w-[700px] p-7 md:p-10 2xl:p-12 mx-[10px] rounded-left-lg bg-purple" 
+			 x-show="showModal" 
+			 @click.away="showModal = false" 
+			 x-transition:enter="ease-out duration-300" 
+			 x-transition:enter-start="opacity-0 scale-90" 
+			 x-transition:enter-end="opacity-100 scale-100" 
+			 x-transition:leave="ease-in duration-300" 
+			 x-transition:leave-start="opacity-100 scale-100" 
+			 x-transition:leave-end="opacity-0 scale-90">
+		<!-- Content -->
+		<div class="modal-content">
+			<div class="flex items-center justify-between mb-4">
+				<h2 class="mb-0 pr-2 text-white text-lg 2xl:text-[32px] font-black">Купить курс</h2>
+				<button class="modal-close text-white hover:text-white/[0.5] transition" @click="showModal = false">
+					<span class="sr-only">Закрыть модальное окно</span>
+					<svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+					</svg>
+				</button>
+			</div>
+			<p class="mb-8 text-white text-xs md:text-sm">Введите свой E-mail адресс для подальшей оплаты и отправки квитанции об оплате за курс.</p>
+			<form class="form">
+				<input class="form-control mb-4 sm:mb-8" type="email" placeholder="E-mail адресс" required>
+				<div class="flex flex-col sm:flex-row sm:items-center">
+					<button class="btn btn-pink" type="submit">Следующий шаг &nbsp;&rarr;</button>
+					<div class="hidden sm:inline-block w-[3px] h-[48px] mx-6 2xl:mx-10 rounded-[6px] bg-white/[0.15]"></div>
+					<div class="price mt-6 sm:mt-0">
+						<div class="price-title text-white text-xs md:text-sm">Цена за курс</div>
+						<div class="price-offer">
+							<ins class="text-white text-[32px] sm:text-lg 2xl:text-[42px] font-black no-underline">2990 ₽</ins>
+							<del class="ml-2 2xl:ml-6 text-white text-[32px] sm:text-lg 2xl:text-[42px] font-black opacity-25">5990 ₽</del>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal-wrapper -->
+</div>

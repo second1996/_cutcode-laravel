@@ -1,7 +1,45 @@
 <!-- Section: Heroes -->
-<section class="s-heroes h-auto lg:h-screen md:min-h-[760px] md:max-h-[960px]">
+<section class="s-heroes relative overflow-hidden h-auto lg:h-screen md:min-h-[760px] md:max-h-[960px]">
+
+	<!-- Site header -->
+	<header class="header absolute top-6 xl:top-12 left-0 right-0 z-50">
+		<div class="container">
+			<div class="header-inner flex items-center">
+				<div class="header-logo shrink-0">
+					<a href="/" rel="home">
+						<img src="./images/logo.svg" class="w-[148px] md:w-[201px] h-[36px] md:h-[50px]" alt="CutCode">
+					</a>
+				</div><!-- /.header-logo -->
+				<div class="header-menu grow flex justify-center ml-8 mr-8">
+					<nav class="hidden 2xl:inline-block">
+						<a href="#" class="ml-4 mr-4 text-white hover:text-pink font-bold">О курсе</a>
+						<a href="#" class="ml-4 mr-4 text-white hover:text-pink font-bold">Для кого</a>
+						<a href="#" class="ml-4 mr-4 text-white hover:text-pink font-bold">Что получишь</a>
+						<a href="#" class="ml-4 mr-4 text-white hover:text-pink font-bold">Отзывы</a>
+						<a href="#" class="ml-4 mr-4 text-white hover:text-pink font-bold">Программа курса</a>
+						<a href="#" class="ml-4 mr-4 text-white hover:text-pink font-bold">Стоимость</a>
+					</nav>
+				</div><!-- /.header-menu -->
+				<div class="header-actions flex items-center">
+					<button class="profile hidden xs:flex items-center">
+						<svg class="profile-icon w-8 h-8 text-purple" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32"><defs/><path d="M26.749 24.93A13.99 13.99 0 1 0 2 16a13.899 13.899 0 0 0 3.251 8.93l-.02.017c.07.084.15.156.222.239c.09.103.187.2.28.3c.28.304.568.596.87.87c.092.084.187.162.28.242c.32.276.649.538.99.782c.044.03.084.069.128.1v-.012a13.901 13.901 0 0 0 16 0v.012c.044-.031.083-.07.128-.1c.34-.245.67-.506.99-.782c.093-.08.188-.159.28-.242c.302-.275.59-.566.87-.87c.093-.1.189-.197.28-.3c.071-.083.152-.155.222-.24zM16 8a4.5 4.5 0 1 1-4.5 4.5A4.5 4.5 0 0 1 16 8zM8.007 24.93A4.996 4.996 0 0 1 13 20h6a4.996 4.996 0 0 1 4.993 4.93a11.94 11.94 0 0 1-15.986 0z" fill="currentColor"/></svg>
+						<span class="profile-text relative ml-2 text-white text-[14px] md:text-xs font-bold">Войти</span>
+					</button>
+					<button class="!hidden md:!flex order btn btn-pink !h-16 ml-6 2xl:ml-12" @click="showModal = true">Купить курс</button>
+					<button id="burgerMenu" class="flex 2xl:hidden ml-4 text-white hover:text-pink transition">
+						<span class="sr-only">Открыть меню</span>
+						<svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+						</svg>
+					</button>
+				</div><!-- /.header-actions -->
+			</div><!-- /.header-inner -->
+		</div><!-- /.container -->
+	</header>
+
+	<!-- Heroes -->
 	<div class="container h-full">
-		<div class="s-heroes-inner h-full flex flex-col lg:flex-row items-start lg:items-center justify-between pt-36 pb-16">
+		<div class="s-heroes-inner relative z-10 h-full flex flex-col lg:flex-row items-start lg:items-center justify-between pt-24 md:pt-36 pb-16">
 			<div class="s-heroes-content">
 				<div class="inline-block mb-6 py-3 md:py-4 px-4 md:px-6 rounded-[6px] bg-purple/10 text-white text-[14px] md:text-xs 2xl:text-sm"><span class="font-bold">16 уроков</span> общей продолжительностью <span class="font-bold">3 часа</span></div>
 				<h1 class="mb-6 text-white text-[52px] leading-[1.1em] sm:text-2xl 2xl:text-3xl font-black"><span class="text-pink">Solid Code</span><br class="block md:hidden lg:block"> в Laravel</h1>
@@ -46,4 +84,7 @@
 			</div><!-- /.s-heroes-form -->
 		</div><!-- /.s-heroes-inner -->
 	</div><!-- /.container -->
+	<div class="s-heroes-photo">
+		<img class="w-full h-full object-cover" src="./images/heroes-photo.png" alt="Solid Code в Laravel">
+	</div><!-- /.s-heroes-photo -->
 </section>

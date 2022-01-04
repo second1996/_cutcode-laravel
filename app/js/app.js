@@ -1,6 +1,25 @@
 document.addEventListener('DOMContentLoaded', function() {
 
 	/**
+	 * Promo banner
+	 */
+	const CUT_CODE_PROMO_KEY = 'CutCode_promo_banner';
+	const bodyEl = document.querySelector('body');
+	const promoBanner = document.querySelector('.promo-banner');
+	const promoBannerCloseBtn = promoBanner.querySelector('#closePromoBanner');
+
+	promoBannerCloseBtn.addEventListener('click', function() {
+		sessionStorage.setItem(CUT_CODE_PROMO_KEY, 'hidden')
+		promoBanner.classList.add('hidden')
+		bodyEl.style.paddingTop = '';
+	})
+
+	if (sessionStorage.getItem(CUT_CODE_PROMO_KEY) !== 'hidden') {
+		promoBanner.classList.remove('hidden')
+		bodyEl.style.paddingTop = `${promoBanner.offsetHeight}px`
+	}
+
+	/**
 	 * Mobile menu
 	 */
 	const burgerMenu = document.querySelector('#burgerMenu');
