@@ -1,5 +1,5 @@
 <!-- Modal: Купить курс -->
-<div class="overflow-auto" style="background-color: rgba(0,0,0,0.5)" x-show="showModal" :class="{ 'fixed inset-0 z-[9999] flex items-center justify-center': showModal }">
+<div class="overflow-auto bg-black/50" x-show="showModal" :class="{ 'fixed inset-0 z-[9999] flex items-center justify-center': showModal }">
 	<div class="modal-wrapper relative z-10 overflow-hidden max-w-[700px] p-7 md:p-10 2xl:p-12 mx-[10px] rounded-left-lg bg-purple" 
 			 x-show="showModal" 
 			 @click.away="showModal = false" 
@@ -41,7 +41,7 @@
 </div>
 
 <!-- Modal: Получи 3 урока за заявку -->
-<div class="overflow-auto" style="background-color: rgba(0,0,0,0.5)" x-show="showModal2" :class="{ 'fixed inset-0 z-[9999] flex items-center justify-center': showModal2 }">
+<div class="overflow-auto bg-black/50" x-show="showModal2" :class="{ 'fixed inset-0 z-[9999] flex items-center justify-center': showModal2 }">
 	<div class="modal-wrapper relative z-10 overflow-hidden max-w-[700px] p-7 md:p-10 2xl:p-12 mx-[10px] rounded-left-lg bg-purple" 
 			 x-show="showModal2" 
 			 @click.away="showModal2 = false" 
@@ -78,5 +78,32 @@
 			</form>
 		</div><!-- /.modal-content -->
 		<img class="absolute -bottom-[80px] -right-[60px] -z-10 w-[320px] opacity-5" src="./images/watermark.svg" alt="CutCode">
+	</div><!-- /.modal-wrapper -->
+</div>
+
+<!-- Modal: Коротко о курсе -->
+<div class="overflow-auto bg-black/50" x-show="showModal3" :class="{ 'fixed inset-0 z-[9999] flex items-center justify-center': showModal3 }">
+	<div class="modal-wrapper relative z-10 overflow-hidden max-w-[1200px] p-7 md:p-10 2xl:p-12 mx-[10px] rounded-left-lg bg-white" 
+			 x-show="showModal3" 
+			 @click.away="showModal3 = false" 
+			 x-transition:enter="ease-out duration-300" 
+			 x-transition:enter-start="opacity-0 scale-90" 
+			 x-transition:enter-end="opacity-100 scale-100" 
+			 x-transition:leave="ease-in duration-300" 
+			 x-transition:leave-start="opacity-100 scale-100" 
+			 x-transition:leave-end="opacity-0 scale-90">
+		<!-- Content -->
+		<div class="modal-content relative">
+			<div class="flex items-center justify-between mb-8">
+				<h2 class="mb-0 pr-2 text-dark text-lg 2xl:text-[32px] font-black">Коротко о курсе</h2>
+				<button class="modal-close text-dark hover:text-purple transition" @click="showModal3 = false">
+					<span class="sr-only">Закрыть модальное окно</span>
+					<svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+					</svg>
+				</button>
+			</div>
+			<iframe class="overflow-hidden w-[240px] xs:w-auto sm:w-[460px] lg:w-[800px] h-[140px] xs:h-auto sm:h-[300px] lg:h-[400px] rounded-right-lg" src="https://www.youtube.com/embed/PeFR_dIbp4M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		</div><!-- /.modal-content -->
 	</div><!-- /.modal-wrapper -->
 </div>
