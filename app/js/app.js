@@ -24,6 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	 */
 	const burgerMenu = document.querySelector('#burgerMenu');
 	const mobileMenu = document.querySelector('#mobileMenu');
+	const mobileMenuNavLink = mobileMenu.querySelectorAll('nav > a');
 	const closeMobileMenu = document.querySelector('#closeMobileMenu');
 
 	function toggleMobileMenu() {
@@ -36,6 +37,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
 	closeMobileMenu.addEventListener('click', function(event) {
 		toggleMobileMenu();
+	});
+
+	mobileMenuNavLink.forEach(function (el) {
+		el.addEventListener('click', function(event) {
+			toggleMobileMenu();
+		});
 	});
 
 	/**
@@ -166,5 +173,18 @@ document.addEventListener('DOMContentLoaded', function() {
 	}
 
 	setClock('.s-price-timer', deadline);
+
+	/**
+	 * Anchor smooth scroll
+	 */
+	document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+		anchor.addEventListener('click', function (e) {
+			e.preventDefault();
+
+			document.querySelector(this.getAttribute('href')).scrollIntoView({
+				behavior: 'smooth'
+			});
+		});
+	});
 
 });
