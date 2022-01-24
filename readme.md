@@ -1,6 +1,13 @@
 <h1>Landing page для CutCode</h1>
 <p>Solid Code в Laravel — Видеокурс по изучению принципов программирования</p>
 
+<h2>How to use</h2>
+<ol>
+	<li>Clone repository</li>
+	<li>Install Node Modules: <strong>npm i</strong></li>
+	<li>Run: <strong>gulp</strong></li>
+</ol>
+
 <h2>Main Gulp tasks</h2>
 <ul>
 	<li><strong>gulp</strong>: run default gulp task (scripts, images, styles, browsersync, startwatch)</li>
